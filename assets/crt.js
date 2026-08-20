@@ -68,11 +68,15 @@
     var el = document.getElementById("gate");
     if (!el) return;
 
-    // Returning within the session, or reduced motion: skip entirely.
+    // ?nogate=1 skips it; ?gate=1 forces it even on a repeat visit.
+    var qs = window.location.search;
+    var force = qs.indexOf("gate=1") > -1 && qs.indexOf("nogate=1") === -1;
+    var skip = qs.indexOf("nogate=1") > -1;
+
     var seen = false;
     try { seen = sessionStorage.getItem("dod.entered") === "1"; } catch (e) {}
 
-    if (reduced || seen) {
+    if (skip || (!force && (reduced || seen))) {
       el.parentNode.removeChild(el);
       return;
     }
