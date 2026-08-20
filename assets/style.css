@@ -358,13 +358,6 @@ ul.dashed > li::before { content: "- "; color: var(--green-dim); }
 
 .meta { font-size: var(--step--1); color: var(--green-dim); }
 
-/* Email addresses are stored reversed in the markup and flipped back with
-   CSS, so naive scrapers harvest a dead string. Readable without JS;
-   crt.js upgrades it to a real mailto link. */
-.mail { unicode-bidi: bidi-override; direction: rtl; }
-.mail-r { unicode-bidi: bidi-override; direction: rtl; }
-.mail a { direction: ltr; unicode-bidi: normal; }
-.mail.ready .mail-r { display: none; }
 
 hr { border: 0; border-top: 1px dashed var(--rule); margin: 2.5rem 0; }
 

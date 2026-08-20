@@ -148,21 +148,20 @@
 
   /* ---------------- email links ---------------- */
 
+  /* The address is entity-encoded in the markup, so it already renders
+     correctly with no CSS and no JS. This only upgrades it to a link. */
   function mail() {
-    var nodes = document.querySelectorAll(".mail[data-u][data-d]");
+    var nodes = document.querySelectorAll(".mail[data-a]");
     for (var i = 0; i < nodes.length; i++) {
       var el = nodes[i];
-      var rev = function (x) { return x.split("").reverse().join(""); };
-      var addr = rev(el.getAttribute("data-u")) + "@" + rev(el.getAttribute("data-d"));
+      if (el.querySelector("a")) continue;
+      var addr = (el.textContent || "").trim();
+      if (addr.indexOf("@") === -1) continue;
       var a = document.createElement("a");
       a.href = "mailto:" + addr;
       a.textContent = addr;
-      // Hide the reversed fallback directly rather than relying on CSS,
-      // so the two never render at once if the stylesheet lags.
-      var fallback = el.querySelector(".mail-r");
-      if (fallback) fallback.style.display = "none";
+      el.textContent = "";
       el.appendChild(a);
-      el.className += " ready";
     }
   }
 
