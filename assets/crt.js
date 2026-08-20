@@ -98,7 +98,7 @@
     var lines = [
       "[SYSTEM] Initializing DIV.OR.DIE protocol...",
       "[SYSTEM] Matrix connection established.",
-      "[ OK ] 2 operators online.",
+      "[ OK ] Operators online.",
       "[ OK ] Awaiting authorization."
     ];
 
