@@ -1,60 +1,35 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 140" fill="none"
-     stroke="#00ff41" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
+     stroke="#00ff41" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
 
-  <!-- Big rounded cranium. The oversized dome against a small lower face
-       is what reads chibi — the cuteness is in the ratio, not the details. -->
-  <path d="M75 12
-           C46 12 24 31 24 58
-           C24 72 30 83 40 90
-           C44 92.5 46 95 46 98
-           V102
-           H104
-           V98
-           C104 95 106 92.5 110 90
-           C120 83 126 72 126 58
-           C126 31 104 12 75 12 Z"/>
+  <!-- Cranium + jaw as ONE silhouette: a big round dome with a small
+       scalloped bump beneath it, never a separate jaw box. -->
+  <path d="M75 14
+           C43 14 20 37 20 66
+           C20 82 27 95 39 103
+           L39 108
+           C39 114 44 118 50 118
+           C55 118 58.5 115 59.5 111
+           C60.5 107.5 62.5 106 65 106
+           H85
+           C87.5 106 89.5 107.5 90.5 111
+           C91.5 115 95 118 100 118
+           C106 118 111 114 111 108
+           L111 103
+           C123 95 130 82 130 66
+           C130 37 107 14 75 14 Z"/>
 
-  <!-- Sockets: big and round for the chibi read, but with a straight
-       top edge and a slight inward tilt so they stay skull, not eyes. -->
-  <path d="M36 51
-           H61
-           L59 66
-           C57.5 73 52.5 77 47 77
-           C40 77 35 71 35 62
-           C35 57 35.3 53.5 36 51 Z"
+  <!-- Sockets: big solid ovals, low and wide apart. -->
+  <ellipse cx="51" cy="70" rx="16" ry="18.5" fill="#00ff41" stroke="none"/>
+  <ellipse cx="99" cy="70" rx="16" ry="18.5" fill="#00ff41" stroke="none"/>
+
+  <!-- Nose: small rounded triangle, tucked below and between the sockets. -->
+  <path d="M75 91
+           C72.5 95 70 97 70 99
+           C70 101 72 102 75 102
+           C78 102 80 101 80 99
+           C80 97 77.5 95 75 91 Z"
         fill="#00ff41" stroke="none"/>
-  <path d="M114 51
-           H89
-           L91 66
-           C92.5 73 97.5 77 103 77
-           C110 77 115 71 115 62
-           C115 57 114.7 53.5 114 51 Z"
-        fill="#00ff41" stroke="none"/>
 
-  <!-- Small nasal cavity, kept low and tidy. -->
-  <path d="M75 82 L69 93 H81 Z"
-        fill="#00ff41" fill-opacity="0.9" stroke="none"/>
-
-  <!-- Jaw: narrow against the big cranium, rounded chin. -->
-  <path d="M47 102
-           H103
-           V110
-           C103 119 95 124 84 124
-           H66
-           C55 124 47 119 47 110
-           Z"/>
-
-  <!-- Teeth as solid blocks with real gaps — reads as a mouth, not a grille. -->
-  <g fill="#00ff41" stroke="none">
-    <rect x="57.5" y="104" width="8.5" height="9" rx="1.6"/>
-    <rect x="68.5" y="104" width="13" height="11" rx="1.8"/>
-    <rect x="84" y="104" width="8.5" height="9" rx="1.6"/>
-  </g>
-
-  <!-- Cheek ticks. -->
-  <path d="M27 74 h7" stroke-width="2.8" stroke-opacity="0.5"/>
-  <path d="M123 74 h-7" stroke-width="2.8" stroke-opacity="0.5"/>
-
-  <!-- Crown seam. -->
-  <path d="M75 12 v8" stroke-width="2.6" stroke-opacity="0.4"/>
+  <!-- Tooth notches in the jaw bump. -->
+  <path d="M69 106.5 v5.5 M81 106.5 v5.5" stroke-width="3.4" stroke-opacity="0.85"/>
 </svg>
