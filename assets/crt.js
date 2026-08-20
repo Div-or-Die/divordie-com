@@ -39,15 +39,24 @@
       if (now - last < 55) return;
       last = now;
 
-      ctx.fillStyle = "rgba(5, 5, 5, 0.09)";
+      ctx.fillStyle = "rgba(5, 5, 5, 0.075)";
       ctx.fillRect(0, 0, window.innerWidth, window.innerHeight);
       ctx.font = size + "px 'Share Tech Mono', monospace";
 
       for (var i = 0; i < cols; i++) {
         var ch = glyphs[(Math.random() * glyphs.length) | 0];
         var y = drops[i] * size;
-        ctx.fillStyle = Math.random() > 0.985 ? "#c8ffd4" : "#00ff41";
+
+        // bright head with phosphor bloom, dimmer tail behind it
+        ctx.shadowColor = "#00ff41";
+        ctx.shadowBlur = 8;
+        ctx.fillStyle = "#ccffd8";
         ctx.fillText(ch, i * size, y);
+
+        ctx.shadowBlur = 0;
+        ctx.fillStyle = "#00ff41";
+        ctx.fillText(glyphs[(Math.random() * glyphs.length) | 0], i * size, y - size);
+
         if (y > window.innerHeight && Math.random() > 0.977) drops[i] = 0;
         drops[i]++;
       }
@@ -82,6 +91,7 @@
     }
 
     el.hidden = false;
+    document.body.classList.add("gated");
     document.body.style.overflow = "hidden";
 
     var boot = el.querySelector(".gate-boot");
@@ -108,6 +118,7 @@
       if (el.dataset.done === "1") return;
       el.dataset.done = "1";
       try { sessionStorage.setItem("dod.entered", "1"); } catch (e) {}
+      document.body.classList.remove("gated");
       document.body.style.overflow = "";
       el.style.transition = "opacity .28s ease";
       el.style.opacity = "0";

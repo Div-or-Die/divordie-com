@@ -9,7 +9,7 @@
   --amber: #ffb000;
   --dark: #0d0d0d;
   --darker: #050505;
-  --panel: rgba(13, 13, 13, 0.94);
+  --panel: rgba(8, 10, 8, 0.86);
   --rule: #00ff4133;
 
   --mono: "Share Tech Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
@@ -45,8 +45,12 @@ body {
   inset: 0;
   z-index: 0;
   pointer-events: none;
-  opacity: 0.13;
+  opacity: 0.55;
 }
+
+/* While the gate is up the rain rides above its backdrop, but stays
+   behind the skull and prompt, and is knocked back so they read clearly. */
+body.gated #rain { z-index: 1; opacity: 0.45; }
 
 .crt-scan,
 .crt-vignette {
@@ -61,14 +65,62 @@ body {
     180deg,
     rgba(0, 0, 0, 0) 0px,
     rgba(0, 0, 0, 0) 2px,
-    rgba(0, 0, 0, 0.22) 3px,
-    rgba(0, 0, 0, 0.22) 4px
+    rgba(0, 0, 0, 0.34) 3px,
+    rgba(0, 0, 0, 0.34) 4px
   );
-  opacity: 0.5;
+  opacity: 0.55;
+  z-index: 6;
+}
+
+/* rolling refresh band */
+.crt-roll {
+  position: fixed;
+  left: 0; right: 0;
+  height: 38vh;
+  z-index: 5;
+  pointer-events: none;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 255, 65, 0) 0%,
+    rgba(0, 255, 65, 0.035) 45%,
+    rgba(0, 255, 65, 0.06) 55%,
+    rgba(0, 255, 65, 0) 100%
+  );
+  animation: roll 7.5s linear infinite;
+}
+
+@keyframes roll {
+  0%   { transform: translateY(-40vh); }
+  100% { transform: translateY(115vh); }
+}
+
+/* glass curvature + edge falloff */
+.crt-glass {
+  position: fixed;
+  inset: 0;
+  z-index: 7;
+  pointer-events: none;
+  border-radius: 22% / 16%;
+  box-shadow:
+    inset 0 0 9vw 3vw rgba(0, 0, 0, 0.72),
+    inset 0 0 2vw 0.5vw rgba(0, 0, 0, 0.45);
+}
+
+/* phosphor bloom in the middle of the tube */
+.crt-bloom {
+  position: fixed;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  background: radial-gradient(ellipse 62% 52% at 50% 44%,
+    rgba(0, 255, 65, 0.10) 0%,
+    rgba(0, 255, 65, 0.03) 45%,
+    transparent 72%);
 }
 
 .crt-vignette {
-  background: radial-gradient(ellipse 78% 68% at 50% 50%, transparent 42%, rgba(0, 0, 0, 0.72) 100%);
+  z-index: 4;
+  background: radial-gradient(ellipse 92% 86% at 50% 50%, transparent 46%, rgba(0, 0, 0, 0.72) 100%);
 }
 
 @keyframes flicker {
@@ -84,8 +136,15 @@ body {
 #gate {
   position: fixed;
   inset: 0;
-  z-index: 50;
-  background: var(--darker);
+  z-index: 2;
+  /* Opaque base hides the page beneath; the tinted layer above it keeps
+     the rain reading as if it is behind glass. */
+  background:
+    radial-gradient(ellipse 40% 34% at 50% 46%,
+      rgba(0, 0, 0, 0.72) 0%, rgba(0, 0, 0, 0.38) 60%, rgba(0, 0, 0, 0) 100%),
+    radial-gradient(ellipse 58% 48% at 50% 46%,
+      rgba(0, 26, 6, 0.55) 0%, rgba(0, 8, 2, 0.88) 58%, rgba(0, 0, 0, 0.97) 100%),
+    #000;
   display: grid;
   place-items: center;
   cursor: pointer;
@@ -95,7 +154,11 @@ body {
 
 #gate[hidden] { display: none; }
 
-.gate-inner { max-width: 30rem; }
+.gate-inner {
+  max-width: 30rem;
+  position: relative;
+  z-index: 2;
+}
 
 .skull {
   width: min(46vw, 190px);
@@ -116,6 +179,7 @@ body {
 }
 
 .gate-boot {
+  text-shadow: 0 0 6px #000, 0 0 14px #000;
   font-size: var(--step--1);
   color: var(--green-mid);
   text-align: left;
@@ -129,7 +193,7 @@ body {
 .gate-prompt {
   font-size: var(--step-1);
   letter-spacing: 0.08em;
-  text-shadow: 0 0 10px var(--green-glow);
+  text-shadow: 0 0 10px var(--green-glow), 0 0 16px #000, 0 0 4px #000;
   margin: 0;
 }
 
@@ -390,6 +454,7 @@ h1[tabindex="-1"]:focus, h1[tabindex="-1"]:focus-visible { outline: none; }
 @media (prefers-reduced-motion: reduce) {
   #gate { display: none !important; }
   #rain { display: none; }
+  .crt-roll { display: none; }
   .crt-scan { animation: none; opacity: 0.28; }
   .skull { animation: none; }
   .blink { animation: none; }
