@@ -146,7 +146,27 @@
     el.focus({ preventScroll: true });
   }
 
-  function init() { rain(); gate(); }
+  /* ---------------- email links ---------------- */
+
+  function mail() {
+    var nodes = document.querySelectorAll(".mail[data-u][data-d]");
+    for (var i = 0; i < nodes.length; i++) {
+      var el = nodes[i];
+      var rev = function (x) { return x.split("").reverse().join(""); };
+      var addr = rev(el.getAttribute("data-u")) + "@" + rev(el.getAttribute("data-d"));
+      var a = document.createElement("a");
+      a.href = "mailto:" + addr;
+      a.textContent = addr;
+      // Hide the reversed fallback directly rather than relying on CSS,
+      // so the two never render at once if the stylesheet lags.
+      var fallback = el.querySelector(".mail-r");
+      if (fallback) fallback.style.display = "none";
+      el.appendChild(a);
+      el.className += " ready";
+    }
+  }
+
+  function init() { rain(); gate(); mail(); }
 
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", init);
