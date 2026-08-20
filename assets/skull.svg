@@ -5,17 +5,14 @@
        scalloped bump beneath it, never a separate jaw box. -->
   <path d="M75 14
            C43 14 20 37 20 66
-           C20 82 27 95 39 103
-           L39 108
-           C39 114 44 118 50 118
-           C55 118 58.5 115 59.5 111
-           C60.5 107.5 62.5 106 65 106
-           H85
-           C87.5 106 89.5 107.5 90.5 111
-           C91.5 115 95 118 100 118
-           C106 118 111 114 111 108
-           L111 103
-           C123 95 130 82 130 66
+           C20 83 28 96 41 103
+           C46 111 52 116 59 116
+           C66 116 70 111 71 105
+           C71.5 102.5 73 101.5 75 101.5
+           C77 101.5 78.5 102.5 79 105
+           C80 111 84 116 91 116
+           C98 116 104 111 109 103
+           C122 96 130 83 130 66
            C130 37 107 14 75 14 Z"/>
 
   <!-- Sockets: big solid ovals, low and wide apart. -->
@@ -23,13 +20,13 @@
   <ellipse cx="99" cy="70" rx="16" ry="18.5" fill="#00ff41" stroke="none"/>
 
   <!-- Nose: small rounded triangle, tucked below and between the sockets. -->
-  <path d="M75 91
-           C72.5 95 70 97 70 99
-           C70 101 72 102 75 102
-           C78 102 80 101 80 99
-           C80 97 77.5 95 75 91 Z"
+  <path d="M75 84
+           C72.5 88 70 90 70 92
+           C70 94 72 95 75 95
+           C78 95 80 94 80 92
+           C80 90 77.5 88 75 84 Z"
         fill="#00ff41" stroke="none"/>
 
   <!-- Tooth notches in the jaw bump. -->
-  <path d="M69 106.5 v5.5 M81 106.5 v5.5" stroke-width="3.4" stroke-opacity="0.85"/>
+  <path d="M64 105 v6 M86 105 v6" stroke-width="3.2" stroke-opacity="0.8"/>
 </svg>
