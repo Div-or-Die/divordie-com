@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://divordie.com/sitemap.xml
