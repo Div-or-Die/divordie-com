@@ -1,65 +1,60 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 148" fill="none"
-     stroke="#00ff41" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 140" fill="none"
+     stroke="#00ff41" stroke-width="4" stroke-linecap="round" stroke-linejoin="round">
 
-  <!-- Cranium: domed top, flattened temples, squarer brow.
-       Chibi mass without going full circle. -->
-  <path d="M70 15
-           C48 15 30 28 25 47
-           C23.5 53 23 58 23 63
-           C23 76 28 86 36 93
-           C40 96.5 42 99 42 103
-           L42 108
-           H98
-           L98 103
-           C98 99 100 96.5 104 93
-           C112 86 117 76 117 63
-           C117 58 116.5 53 115 47
-           C110 28 92 15 70 15 Z"/>
+  <!-- Big rounded cranium. The oversized dome against a small lower face
+       is what reads chibi — the cuteness is in the ratio, not the details. -->
+  <path d="M75 12
+           C46 12 24 31 24 58
+           C24 72 30 83 40 90
+           C44 92.5 46 95 46 98
+           V102
+           H104
+           V98
+           C104 95 106 92.5 110 90
+           C120 83 126 72 126 58
+           C126 31 104 12 75 12 Z"/>
 
-  <!-- Eye sockets: large and rounded, but angled at the inner brow
-       so they read as sockets rather than eyes. -->
-  <path d="M53 63
-           C53 54 47 49 41 49
-           C34 49 30 55 30 63
-           C30 72 36 78 43 78
-           C49.5 78 53 73 53 63 Z"
+  <!-- Sockets: big and round for the chibi read, but with a straight
+       top edge and a slight inward tilt so they stay skull, not eyes. -->
+  <path d="M36 51
+           H61
+           L59 66
+           C57.5 73 52.5 77 47 77
+           C40 77 35 71 35 62
+           C35 57 35.3 53.5 36 51 Z"
         fill="#00ff41" stroke="none"/>
-  <path d="M87 63
-           C87 54 93 49 99 49
-           C106 49 110 55 110 63
-           C110 72 104 78 97 78
-           C90.5 78 87 73 87 63 Z"
+  <path d="M114 51
+           H89
+           L91 66
+           C92.5 73 97.5 77 103 77
+           C110 77 115 71 115 62
+           C115 57 114.7 53.5 114 51 Z"
         fill="#00ff41" stroke="none"/>
 
-  <!-- Brow ridge: the detail that keeps it serious. -->
-  <path d="M30 51 C37 46.5 47.5 45.5 53.5 49.5" stroke-width="3" stroke-opacity="0.9"/>
-  <path d="M110 51 C103 46.5 92.5 45.5 86.5 49.5" stroke-width="3" stroke-opacity="0.9"/>
-
-  <!-- Nasal cavity: inverted heart, small. -->
-  <path d="M70 82
-           C67.5 86.5 64 88.5 64 92
-           C64 94.5 66.5 96 70 96
-           C73.5 96 76 94.5 76 92
-           C76 88.5 72.5 86.5 70 82 Z"
+  <!-- Small nasal cavity, kept low and tidy. -->
+  <path d="M75 82 L69 93 H81 Z"
         fill="#00ff41" fill-opacity="0.9" stroke="none"/>
 
-  <!-- Jaw: narrower than the cranium, deeper, tapered to a rounded chin. -->
-  <path d="M42 108
-           H98
-           V116
-           C98 127 89 133 76 133
-           H64
-           C51 133 42 127 42 116
+  <!-- Jaw: narrow against the big cranium, rounded chin. -->
+  <path d="M47 102
+           H103
+           V110
+           C103 119 95 124 84 124
+           H66
+           C55 124 47 119 47 110
            Z"/>
 
-  <!-- Teeth: fewer, chunkier, chibi-scaled. -->
-  <path d="M58 108 v10 M70 108 v12 M82 108 v10" stroke-width="2.8"/>
-  <path d="M48 120 H92" stroke-width="2.2" stroke-opacity="0.75"/>
+  <!-- Teeth as solid blocks with real gaps — reads as a mouth, not a grille. -->
+  <g fill="#00ff41" stroke="none">
+    <rect x="57.5" y="104" width="8.5" height="9" rx="1.6"/>
+    <rect x="68.5" y="104" width="13" height="11" rx="1.8"/>
+    <rect x="84" y="104" width="8.5" height="9" rx="1.6"/>
+  </g>
 
-  <!-- Cheekbone ticks. -->
-  <path d="M27 82 h7" stroke-width="2.4" stroke-opacity="0.5"/>
-  <path d="M113 82 h-7" stroke-width="2.4" stroke-opacity="0.5"/>
+  <!-- Cheek ticks. -->
+  <path d="M27 74 h7" stroke-width="2.8" stroke-opacity="0.5"/>
+  <path d="M123 74 h-7" stroke-width="2.8" stroke-opacity="0.5"/>
 
   <!-- Crown seam. -->
-  <path d="M70 15 v8" stroke-width="2.2" stroke-opacity="0.4"/>
+  <path d="M75 12 v8" stroke-width="2.6" stroke-opacity="0.4"/>
 </svg>
