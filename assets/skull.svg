@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 130" fill="none"
+     stroke="#00ff41" stroke-width="2.4" stroke-linecap="square" stroke-linejoin="miter">
+  <!-- cranium -->
+  <path d="M22 62 V44 C22 26 38 12 60 12 C82 12 98 26 98 44 V62
+           C98 74 92 80 86 84 L84 98 H36 L34 84 C28 80 22 74 22 62 Z"/>
+  <!-- eye sockets -->
+  <path d="M36 50 h20 v16 h-8 l-6 -4 h-6 z" fill="#00ff41" fill-opacity="0.9" stroke="none"/>
+  <path d="M84 50 h-20 v16 h8 l6 -4 h6 z" fill="#00ff41" fill-opacity="0.9" stroke="none"/>
+  <!-- nasal cavity -->
+  <path d="M60 70 l-6 12 h12 z" fill="#00ff41" fill-opacity="0.75" stroke="none"/>
+  <!-- jaw -->
+  <path d="M36 98 h48 v10 c0 6 -6 10 -14 10 H50 c-8 0 -14 -4 -14 -10 z"/>
+  <!-- teeth -->
+  <path d="M46 98 v10 M56 98 v12 M66 98 v12 M76 98 v10" stroke-width="2"/>
+  <path d="M36 108 h48" stroke-width="1.6" stroke-opacity="0.75"/>
+  <!-- cheek scanlines -->
+  <path d="M28 74 h8 M92 74 h-8" stroke-width="1.6" stroke-opacity="0.6"/>
+</svg>

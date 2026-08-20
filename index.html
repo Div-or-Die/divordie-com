@@ -3,137 +3,162 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Div or Die — Game Studio</title>
+<title>DIV.OR.DIE // Game Studio</title>
 <meta name="description" content="Div or Die LLC is a two-person independent game studio building games for iOS, Steam, and PC.">
 <link rel="canonical" href="https://divordie.com/">
-<meta property="og:title" content="Div or Die — Game Studio">
+<meta property="og:title" content="DIV.OR.DIE // Game Studio">
 <meta property="og:description" content="A two-person independent game studio building games for iOS, Steam, and PC.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://divordie.com/">
-<meta name="theme-color" content="#0d0b16">
+<meta name="theme-color" content="#050505">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/style.css">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
 
-<header class="site-head">
-  <div class="wrap">
-    <a class="wordmark" href="/">div<span class="slash">/</span>or<b>/</b>die</a>
-    <nav class="site-nav" aria-label="Primary">
-      <a href="/about/">About</a>
-      <a href="/contact/">Contact</a>
-      <a href="/privacy/">Privacy</a>
-    </nav>
+<canvas id="rain" aria-hidden="true"></canvas>
+
+<!-- Entry gate. Hidden by default so the page is usable without JS. -->
+<div id="gate" hidden role="button" tabindex="0"
+     aria-label="Enter the site">
+  <div class="gate-inner">
+    <img class="skull" src="/assets/skull.svg" alt="" aria-hidden="true">
+    <div class="gate-boot" aria-hidden="true"></div>
+    <p class="gate-prompt">[ CLICK THE SKULL TO ENTER ]<span class="blink">_</span></p>
+    <p class="gate-hint">or press any key</p>
   </div>
-</header>
+</div>
 
-<main id="main">
-  <div class="wrap">
+<div class="crt-scan" aria-hidden="true"></div>
+<div class="crt-vignette" aria-hidden="true"></div>
 
-    <section class="hero">
-      <p class="eyebrow">Independent Game Studio</p>
-      <h1>Two people. <span class="pop">Too&nbsp;many&nbsp;games.</span></h1>
-      <p class="lede">
-        Div or Die is a small independent studio building games for iOS, Steam,
-        and PC. We make the things we want to play.
-      </p>
-      <ul class="tagstrip">
-        <li>iOS</li>
-        <li>Steam</li>
-        <li>PC</li>
-        <li>Made in-house</li>
-      </ul>
-    </section>
+<div class="shell">
+<div class="wrap">
+  <div class="term">
 
-    <h2>What we&rsquo;re building</h2>
+    <div class="term-head">
+      <span class="dots" aria-hidden="true"><i></i><i></i><i></i></span>
+      <a class="term-title" href="/">DIV.OR.DIE // TERMINAL v1.0</a>
+      <nav class="term-nav" aria-label="Primary">
+        <a href="/about/">[ABOUT]</a>
+        <a href="/contact/">[CONTACT]</a>
+        <a href="/privacy/">[PRIVACY]</a>
+      </nav>
+    </div>
 
-    <p>
-      We work across genres rather than picking a lane. Right now that means a
-      handful of projects at very different stages, from prototypes to titles
-      preparing for release.
-    </p>
+    <div class="term-body">
+      <main id="main">
 
-    <ul class="grid">
-      <li class="tile">
-        <span class="kicker">Mobile</span>
-        <h3>Ambient simulation</h3>
-        <p>
-          Living, procedurally animated worlds you can sit with. Rendered in real
-          time, built to run smoothly and stay out of your way.
+        <div class="console" aria-hidden="true">
+          <p class="sys">[SYSTEM] Initializing DIV.OR.DIE protocol...</p>
+          <p class="sys">[SYSTEM] Matrix connection established.</p>
+          <p class="ok">[ OK ] 2 operators online.</p>
+          <p class="ok">[ OK ] Ready.</p>
+        </div>
+
+        <h1>DIV<span class="mag">.</span>OR<span class="mag">.</span>DIE</h1>
+
+        <p class="lede">
+          A two-person independent game studio building games for iOS, Steam,
+          and PC.
         </p>
-      </li>
-      <li class="tile">
-        <span class="kicker">Desktop</span>
-        <h3>Puzzle games</h3>
+
+        <h2>What we're building</h2>
+
         <p>
-          Systems-driven puzzles with a hard edge and a terminal streak. Small
-          rule sets, deep consequences.
+          We work across genres rather than picking a lane. Right now that means a
+          handful of projects at very different stages, from prototypes to titles
+          preparing for release.
         </p>
-      </li>
-      <li class="tile">
-        <span class="kicker">PC &amp; Console</span>
-        <h3>Arcade sports</h3>
+
+        <ul class="grid">
+          <li class="tile">
+            <span class="kicker">// mobile</span>
+            <h3>Ambient simulation</h3>
+            <p>
+              Living, procedurally animated worlds you can sit with. Rendered in
+              real time, built to run smooth and stay out of your way.
+            </p>
+          </li>
+          <li class="tile">
+            <span class="kicker">// desktop</span>
+            <h3>Puzzle games</h3>
+            <p>
+              Systems-driven puzzles with a hard edge and a terminal streak. Small
+              rule sets, deep consequences.
+            </p>
+          </li>
+          <li class="tile">
+            <span class="kicker">// pc + console</span>
+            <h3>Arcade sports</h3>
+            <p>
+              Physics-first sports built around feel. If the ball isn't fun before
+              there's a scoreboard, nothing else matters.
+            </p>
+          </li>
+          <li class="tile">
+            <span class="kicker">// live</span>
+            <h3>Interactive streaming</h3>
+            <p>
+              Games that turn a live audience into the controller, where the chat
+              is a player rather than a spectator.
+            </p>
+          </li>
+        </ul>
+
+        <h2>How we work</h2>
+
         <p>
-          Physics-first sports built around feel. If the ball isn&rsquo;t fun before
-          there&rsquo;s a scoreboard, nothing else matters.
+          Everything is built in-house &mdash; design, code, and art, by the two of
+          us. No publishers, no outsourcing, no roadmap written by someone who has
+          never played the build.
         </p>
-      </li>
-      <li class="tile">
-        <span class="kicker">Live</span>
-        <h3>Interactive streaming</h3>
+
         <p>
-          Games that turn a live audience into the controller, where the chat is
-          a player rather than a spectator.
+          We care about the parts players feel and studios usually cut: how a
+          control responds, whether a game holds frame rate on hardware people
+          actually own, whether it works with the network switched off. Our games
+          keep their data on your device. We don't build ads into them and we don't
+          collect information we have no use for.
         </p>
-      </li>
-    </ul>
 
-    <h2>How we work</h2>
+        <p>
+          We announce things when they're real. Titles get their own pages here as
+          they approach release, along with whatever support they need.
+        </p>
 
-    <p>
-      Everything is built in-house &mdash; design, code, and art, by the two of us.
-      No publishers, no outsourcing, no roadmap written by someone who has never
-      played the build.
-    </p>
+        <div class="card">
+          <p class="eyebrow">&gt; open channel</p>
+          <p>
+            Press, business, or just curious what we're working on &mdash; the mail
+            comes straight to us.
+          </p>
+          <p class="contact-line">
+            <a href="mailto:hello@divordie.com">hello@divordie.com</a>
+          </p>
+        </div>
 
-    <p>
-      We care about the parts players feel and studios usually cut: how a control
-      responds, whether a game runs at full frame rate on hardware people actually
-      own, whether it works with the network switched off. Our games keep their data
-      on your device. We don&rsquo;t build ads into them and we don&rsquo;t collect
-      information we have no use for.
-    </p>
+      </main>
+    </div>
 
-    <p>
-      We announce things when they&rsquo;re real. Titles get their own pages here as
-      they approach release, along with whatever support and documentation they need.
-    </p>
-
-    <div class="card">
-      <p class="eyebrow">Say hello</p>
+    <div class="term-foot">
+      <p>&copy; 2026 Div or Die LLC</p>
       <p>
-        Press, business, or just curious what we&rsquo;re working on &mdash;
-        the mail comes straight to us.
-      </p>
-      <p class="contact-line">
-        <a href="mailto:hello@divordie.com">hello@divordie.com</a>
+        <a href="/about/">[ABOUT]</a>
+        <a href="/contact/">[CONTACT]</a>
+        <a href="/privacy/">[PRIVACY]</a>
       </p>
     </div>
 
   </div>
-</main>
+</div>
+<div class="pagefoot"></div>
+</div>
 
-<footer class="site-foot">
-  <div class="wrap">
-    <p>&copy; 2026 Div or Die LLC</p>
-    <p>
-      <a href="/about/">About</a> &middot;
-      <a href="/contact/">Contact</a> &middot;
-      <a href="/privacy/">Privacy</a>
-    </p>
-  </div>
-</footer>
-
+<script src="/assets/crt.js" defer></script>
 </body>
 </html>

@@ -1,9 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
-  <rect width="64" height="64" rx="14" fill="#0d0b16"/>
-  <text x="14" y="43" font-family="ui-monospace,SFMono-Regular,Menlo,monospace"
-        font-size="30" font-weight="700" fill="#f4f1ff">d</text>
-  <text x="32" y="43" font-family="ui-monospace,SFMono-Regular,Menlo,monospace"
-        font-size="30" font-weight="700" fill="#ff4d8d">/</text>
-  <text x="46" y="43" font-family="ui-monospace,SFMono-Regular,Menlo,monospace"
-        font-size="30" font-weight="700" fill="#35e0d8">d</text>
+  <rect width="64" height="64" fill="#050505"/>
+  <g fill="none" stroke="#00ff41" stroke-width="3" stroke-linejoin="miter">
+    <path d="M14 34 V24 C14 15 22 9 32 9 C42 9 50 15 50 24 V34 C50 40 47 43 44 45 L43 52 H21 L20 45 C17 43 14 40 14 34 Z"/>
+  </g>
+  <path d="M21 27 h11 v9 h-5 l-3 -2 h-3 z" fill="#00ff41"/>
+  <path d="M43 27 h-11 v9 h5 l3 -2 h3 z" fill="#00ff41"/>
+  <path d="M32 39 l-3 6 h6 z" fill="#00ff41"/>
 </svg>
