@@ -1,0 +1,19 @@
+<!-- Div or Die favicon v1 — LOCKED. Do not edit; iterate in v2. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" fill="#050505"/>
+  <g transform="translate(32,33) scale(0.415) translate(-75,-67)">
+    <path d="M75 15 C43 15 20 38 20 67 C20 84 29 97 43 104
+             C46 105.5 48 108 48 111 V113 C48 117 51 119 55 119
+             H95 C99 119 102 117 102 113 V111
+             C102 108 104 105.5 107 104 C121 97 130 84 130 67
+             C130 38 107 15 75 15 Z"
+          fill="none" stroke="#00ff41" stroke-width="9"
+          stroke-linecap="round" stroke-linejoin="round"/>
+    <ellipse cx="52" cy="69" rx="16" ry="18.5" fill="#00ff41"/>
+    <ellipse cx="98" cy="69" rx="16" ry="18.5" fill="#00ff41"/>
+    <path d="M75 88 C72.5 92 70 94 70 96 C70 98 72 99 75 99
+             C78 99 80 98 80 96 C80 94 77.5 92 75 88 Z" fill="#00ff41"/>
+    <rect x="63" y="106" width="8" height="10" rx="2" fill="#00ff41"/>
+    <rect x="79" y="106" width="8" height="10" rx="2" fill="#00ff41"/>
+  </g>
+</svg>
