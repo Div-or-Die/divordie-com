@@ -6,7 +6,7 @@ Company site for Div or Die LLC. Static HTML, deployed via GitHub Pages.
 
 - `index.html` — home
 - `about/` — company
-- `support/` — support contact (App Store Support URL)
+- `contact/` — contact page
 - `privacy/` — privacy policy (App Store Privacy Policy URL)
 - `CNAME` — custom domain for GitHub Pages
 
